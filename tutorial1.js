@@ -22,4 +22,13 @@ const data = tf.tensor(values, shape);
 // console.log(data);
 
 const threeD = tf.tensor3d(values, shape, "int32");
+
 console.log(threeD.toString());
+
+// these two below are the same
+// use dataSync() instead
+threeD.data().then(stuff => {
+  console.log(stuff);
+});
+
+console.log(threeD.dataSync());
