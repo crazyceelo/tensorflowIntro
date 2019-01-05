@@ -4,6 +4,7 @@
   "description": "learning how to use tensorflow",
   "main": "index.js",
   "dependencies": {
+    "@tensorflow/tfjs": "^0.14.1",
     "@tensorflow/tfjs-node": "^0.2.1"
   },
   "devDependencies": {},
