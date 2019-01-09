@@ -77,3 +77,17 @@ const c = tf.scalar(8);
 // predict output for input of 2
 const result = predict(3);
 result.print();
+
+// tf.tidy
+
+const average = tf.tidy(() => {
+  const y = tf.tensor1d([1, 2, 3, 4]);
+  const z = tf.ones([4]);
+
+  return y
+    .sub(z)
+    .square()
+    .mean();
+});
+
+average.print();
