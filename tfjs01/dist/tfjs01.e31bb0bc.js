@@ -54979,10 +54979,10 @@ require("bootstrap/dist/css/bootstrap.css");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-document.getElementById("output").innerText = "hello world"; // this is called linear regression
+// document.getElementById("output").innerText = "hello world";
+// this is called linear regression
 // y = 2x - 1
 // y = mx + b
-
 var model = tf.sequential();
 model.add(tf.layers.dense({
   units: 1,
@@ -54997,7 +54997,13 @@ var ys = tf.tensor2d([-3, -1, 1, 3, 5, 7], [6, 1]);
 model.fit(xs, ys, {
   epochs: 500
 }).then(function () {
-  model.predict(tf.tensor2d([5], [1, 1])).print();
+  document.getElementById("predictButton").disabled = false;
+  document.getElementById("predictButton").innerText = "Predict";
+});
+document.getElementById("predictButton").addEventListener("click", function (el, ev) {
+  var val = document.getElementById("inputValue").value;
+  var test = parseInt(val);
+  document.getElementById("output").innerText = model.predict(tf.tensor2d([test], [1, 1]));
 });
 },{"@tensorflow/tfjs":"../node_modules/@tensorflow/tfjs/dist/tf.esm.js","bootstrap/dist/css/bootstrap.css":"../node_modules/bootstrap/dist/css/bootstrap.css"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

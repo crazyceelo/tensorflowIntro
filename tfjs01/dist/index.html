@@ -9,9 +9,23 @@
     <!-- <script src="main.js"></script> -->
   <link rel="stylesheet" href="/tfjs01.e31bb0bc.css"></head>
   <body>
-    <div class="container">
-      <h1>Welcome to TensorFlow.js</h1>
-      <div id="output"></div>
+    <div class="container" style="padding-top: 20px">
+      <div class="card">
+        <div class="card-header">
+          <strong>TensoreFlow.js Demo - Linear Regression</strong>
+        </div>
+        <div class="card-body">
+          <label>input value:</label>
+          <input type="text" id="inputValue" class="form-control"> <br>
+          <button type="button" class="btn btn-primary" id="predictButton" disabled="">
+            model is being trained. please wait
+          </button>
+          <br>
+          <br>
+          <h4>Result:</h4>
+          <h5><span class="badge badge-secondary" id="output"></span></h5>
+        </div>
+      </div>
     </div>
     <script src="/tfjs01.e31bb0bc.js"></script>
   </body>
